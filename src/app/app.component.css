@@ -1,0 +1,88 @@
+.fill-remaining-space {
+  /* This fills the remaining space, by using flexbox. 
+     Every toolbar row uses a flexbox row layout. */
+  flex: 1 1 auto;
+}
+
+.example-card{
+  max-width:70% ;
+  position: inherit;
+  margin-right: 50px;
+  max-height:50% ;
+}
+.container {
+  padding: 20px;
+}
+
+.form {
+
+  width: 100%;
+}
+#names{
+  display: inline-block;
+  width:180px ;
+  margin:5px; 
+}
+.form-element {
+  padding: 5px 0px 25px 2px;
+  
+}
+
+mat-button{
+margin: 20px;
+
+}
+
+.mat-card{
+border-radius: 4px;
+padding: 16px;
+position: relative;
+}
+.cb-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  flex-flow: row;
+}
+
+.mat-checkbox {
+  margin-left:20px;
+} 
+
+.cb-vertival {
+  flex-flow: column;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.center{
+  width: 75%;
+  margin: 10px auto;
+}
+
+.main-div{
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top:20px;
+}
+#submitbutton{
+  display: flex;
+}
+
+
+.example-section {
+  margin: 12px 0;
+}
+
+.example-margin {
+  margin: 0 12px;
+}
+
+.button{
+
+  float:right  ;
+  margin-right:200px;
+
+}

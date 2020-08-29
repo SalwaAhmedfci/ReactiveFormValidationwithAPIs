@@ -1,0 +1,129 @@
+<mat-tab-group mat-align-tabs="center">
+  <mat-tab label="Delivery">
+   
+    
+
+ 
+        <div class="container main-div" *ngIf="!post; else forminfo" novalidate> 
+          <form [formGroup]="formGroup" (ngSubmit)="onSubmit(formGroup.value)" class="form">
+            
+            <mat-card class="example-card z-depth center">
+              
+              <mat-card-content>
+            <mat-card-title>Billing Address</mat-card-title>
+            <mat-form-field id="names" class="form-element">
+              <input matInput placeholder="First Name*" formControlName="name">
+              <mat-error *ngIf="!name.valid && name.touched">
+                {{ titleAlert }}
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field  id="names" class="form-element">
+              <input matInput placeholder="Last Name*" formControlName="Lname">
+              <mat-error *ngIf="!Lname.valid && Lname.touched">
+                {{ titleAlert }}
+              </mat-error>
+            </mat-form-field>
+            
+
+            <div  class="cb-vertival" >
+
+
+              <mat-form-field class="form-element">
+                <textarea matInput placeholder="addressline1*" matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="5" formControlName="addressline1"></textarea>
+                <mat-error *ngIf="!formGroup.controls['addressline1'].valid && formGroup.controls['addressline1'].touched">
+                  Required field, must be between 5 and 10 characters.
+                </mat-error>
+              </mat-form-field>
+
+              <mat-form-field class="form-element">
+                <textarea matInput placeholder="addressline2*" matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="5" formControlName="addressline2"></textarea>
+                <mat-error *ngIf="!formGroup.controls['addressline2'].valid && formGroup.controls['addressline2'].touched">
+                  Required field, must be between 5 and 10 characters.
+                </mat-error>
+              </mat-form-field>
+              </div>
+            
+
+
+            <mat-form-field   class="form-element" fxLayout="column">
+              <input matInput placeholder="City*" formControlName="City">
+              <mat-error *ngIf="!City.valid && City.touched">
+                {{ titleAlert }}
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field   class="form-element"fxLayout="column">
+              <input matInput placeholder="Postal Code*" formControlName="Postal_Code">
+              <mat-error *ngIf="!Postal_Code.valid && Postal_Code.touched">
+                {{ titleAlert }}
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field   class="form-element"fxLayout="column">
+              <input matInput placeholder="Country*" formControlName="Country">
+              <mat-error *ngIf="!Country.valid && Country.touched">
+                {{ titleAlert }}
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field   class="form-element"fxLayout="column" >
+              <input matInput placeholder="State*" formControlName="State">
+              <mat-error *ngIf="!State.valid && State.touched">
+                {{ titleAlert }}
+              </mat-error>
+            </mat-form-field>
+        
+            <mat-form-field class="form-element" class="cb-wrapper" >
+              <input matInput placeholder="Emailaddress*" formControlName="email">
+              <mat-error *ngIf="!formGroup.controls['email'].valid && formGroup.controls['email'].touched">
+                {{ getErrorEmail() }}
+              </mat-error>
+            </mat-form-field>
+      
+  
+
+        
+            <mat-form-field class="form-element">
+              <input matInput placeholder="Password" formControlName="password">
+              <mat-hint>Choose a password of at least eight characters, one uppercase letter and one number</mat-hint>
+              <mat-error *ngIf="!formGroup.controls['password'].valid && formGroup.controls['password'].touched">
+                {{ getErrorPassword() }}
+              </mat-error>
+            </mat-form-field>
+        
+  
+        
+           
+
+        </mat-card-content>
+  
+        </mat-card>
+        
+        </form>
+
+        </div>
+ 
+    <ng-template #forminfo>
+      <div class="container">
+        {{ post | json }}
+      </div>
+    </ng-template>
+
+              
+           
+    <section class="example-section main-div">
+      <mat-checkbox  ng-model="checked" >Check me!</mat-checkbox>
+    </section>
+    <mat-card class="example-card z-depth center" ng-show="checked">
+    <mat-radio-group aria-label="Select an option">
+      <mat-radio-button value="1">Option 1</mat-radio-button>
+      <mat-radio-button value="2">Option 2</mat-radio-button>
+    </mat-radio-group>
+
+
+  </mat-card>
+ 
+  <button mat-raised-button color="primary" type="submit" class="button" [disabled]="!formGroup.valid">Submit Form</button>
+  </mat-tab>
+  <mat-tab label="Shipping"></mat-tab>
+  <mat-tab label="Payment"></mat-tab>
+</mat-tab-group>
+
